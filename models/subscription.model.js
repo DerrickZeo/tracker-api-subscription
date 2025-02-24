@@ -1,0 +1,93 @@
+
+import mongoose from "mongoose";
+
+const subscriptionSchema = new mongoose.Schema({
+    name: {
+        type: String, 
+        required: [true, 'Subscription name is required'],
+        trime: true,
+        minLength: 2,
+        maxLength: 100
+    },
+    price: {
+        type: Number,
+        required: [true, 'Sunscription Price is required'],
+        min: [0, 'Price must not be less than 0']
+    },
+    currency: {
+        type: String,
+        enum: ['USD', 'EUR', 'GBP', 'XAF'],
+        default: 'EUR'
+    },
+    frequency: {
+        type: String,
+        enum: ['daily', 'weekly', 'monthly', 'yearly']
+    },
+    category: {
+        type: String,
+        enum: ['sports', 'news', 'entertainment', 'lifestyle', 'technology', 'finance', 'politics', 'other'],
+        required: true
+    },
+    paymentMethod: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    status: {
+        type: String,
+        enum: ['active', 'cancelled', 'expired'],
+        default: 'active'
+    },
+    startDate: {
+        type: Date,
+        required: true,
+        validate: {
+            validator: (value) => value <= new Date(),
+            message: 'Start date must be today or in the past'
+        }
+    },
+    renewaltDate: {
+        type: Date,
+        validate: {
+            validator: function(value)  { return value > this.startDate;},
+            message: 'Renewal date must be after the start date'
+        }
+    },
+     user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+        index: true
+     }
+
+}, 
+{timestamps: true});
+
+// before a subsccription is saved, Autocalculate the renewal date if missing 
+subscriptionSchema.pre('save', function(next)  {
+    if(!this.renewaltDate){
+        const renewalPeriods = {
+            daily: 1,
+            weekly: 7,
+            monthly: 30,
+            yearly: 365
+        };
+
+        this.renewalDate = new Date(this.startDate);
+        this.renewalDate.setDate(this.renewalDate.getDate() + renewalPeriods[this.frequency]);
+    }
+
+    // auto update status if renwal has passed
+    if(this.renewalDate < new Date()){
+        this.status = 'expired';
+    }
+
+    next(); // proceed to the creation of the document in the database
+})
+
+
+
+
+const Subscription = mongoose.model('Subscription', subscriptionSchema);
+
+export default Subscription;
