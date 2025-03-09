@@ -7,11 +7,11 @@ const userSchema = new mongoose.Schema(
             required: [true, 'User Name is required'],
             trim: true, //if empty spaces occur
             minLength: 2,
-            maxLengthe: 50
+            maxLength: 50
         },
         email: {
             type: String,
-            required: [true, 'User emails is required'],
+            required: [true, 'User email is required'],
             unique: true,
             trim: true, //if empty spaces occur
             lowercase: true,
