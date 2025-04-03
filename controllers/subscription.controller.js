@@ -7,7 +7,7 @@ export const createSubscription = async (req, res, next) => {
     try {
       const subscription = await Subscription.create({
         ...req.body,//Spread the entire request: everything the user passes into this call
-        user: req.user._id //id comes from from the auth middleware
+        user: req.user._id //id comes from the auth middleware: enables us to know which user is tryingto creat a subscription
       });
 
       const { workflowRunId } = await workflowClient.trigger({
@@ -20,7 +20,7 @@ export const createSubscription = async (req, res, next) => {
         },
         retries: 0,
       })
-      //await workflowClient.trigger({url: `${SERVER_URL}`});
+      //const { workflowRunId } = await workflowClient.trigger({url: `${SERVER_URL}`});
   
       res.status(201).json({ success: true, data: { subscription, workflowRunId} });
     } catch (e) {

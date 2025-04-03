@@ -2,14 +2,17 @@ import nodemailer from 'nodemailer';
 
 import { EMAIL_PASSWORD } from './env.js'
 
-export const accountEmail = 'javascriptmastery00@gmail.com';
+export const accountEmail = 'derricktsamoh@gmail.com';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'derricktsamoh@gmail.com',
+    user: accountEmail,
     pass: EMAIL_PASSWORD
+  }, 
+  tls: {
+    rejectUnauthorized: false // <-- add this
   }
-})
+});
 
 export default transporter;

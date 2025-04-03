@@ -20,6 +20,8 @@ const aj = arcjet({
           // See the full list at https://arcjet.com/bot-list
           //"CATEGORY:MONITOR", // Uptime monitoring services
           //"CATEGORY:PREVIEW", // Link previews e.g. Slack, Discord
+          "POSTMAN",
+          "CURL"
         ],
       }),
       // Create a token bucket rate limit. Other algorithms are supported.
