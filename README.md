@@ -10,7 +10,7 @@
   <h3 align="center">A Subscription Management System API</h3>
 
    <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
+     Build this project following the step by step guide
     </div>
 </div>
 
@@ -20,27 +20,13 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Snippets (Code to Copy)](#snippets)
-6. 🔗 [Assets](#links)
-7. 🚀 [More](#more)
-
-## 🚨 Tutorial
-
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
-
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
-
-<a href="https://youtu.be/rOpEN1JDaD0?si=WfOjLV57WfR9x6QK" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+5. 🔗 [Assets](#links)
 
 ## <a name="introduction">🤖 Introduction</a>
 
-Build a **production-ready Subscription Management System API** that handles **real users, real money, and real business logic**.  
+This is a **production-ready Subscription Management System API** that handles **real users, real money, and real business logic**.  
 
 Authenticate users using JWTs, connect a database, create models and schemas, and integrate it with ORMs. Structure the architecture of your API to ensure scalability and seamless communication with the frontend.  
-
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
@@ -70,7 +56,7 @@ Follow these steps to set up the project locally on your machine.
 
 **Prerequisites**
 
-Make sure you have the following installed on your machine:
+Install the following on your machine:
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
@@ -79,8 +65,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/adrianhajdin/subscription-tracker-api.git
-cd subscription-tracker-api
+git clone https://github.com/DerrickZeo/tracker-api-subscription.git
+cd tracker-api-subscription
 ```
 
 **Installation**
@@ -133,16 +119,16 @@ Open [http://localhost:5500](http://localhost:5500) in your browser or any HTTP 
 ## <a name="snippets">🕸️ Snippets</a>
 
 <details>
-<summary><code>Dummy JSON Data</code></summary>
+<summary><code>Sample JSON Data</code></summary>
 
 ```json
 {
-  "name": "Javascript Mastery Elite Membership",
-  "price": 139.00,
-  "currency": "USD",
+  "name": "Netflix",
+  "price":19.00,
+  "currency": "EUR",
   "frequency": "monthly",
   "category": "Entertainment",
-  "startDate": "2025-01-20T00:00:00.000Z",
+  "startDate": "2025-04-04T00:00:00.000Z",
   "paymentMethod": "Credit Card"
 }
 ```
@@ -152,17 +138,7 @@ Open [http://localhost:5500](http://localhost:5500) in your browser or any HTTP 
 ## <a name="links">🔗 Links</a>
 
 - **Arcjet** - [https://launch.arcjet.com/4g2R2e4](https://launch.arcjet.com/4g2R2e4)  
-- **Upstash** - [https://bit.ly/42ealiN](https://bit.ly/42ealiN)  
-- **Hostinger** - [https://hostinger.com/mastery10](https://hostinger.com/mastery10)  
-- **WebStorm** - [https://jb.gg/GetWebStormFree](https://jb.gg/GetWebStormFree)  
+- **Upstash** - [https://bit.ly/42ealiN](https://bit.ly/42ealiN)    
 
-## <a name="more">🚀 More</a>
 
-**Advance your skills with Next.js Pro Course**
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
-
-<a href="https://jsmastery.pro/next15" target="_blank">
-   <img src="https://github.com/user-attachments/assets/b8760e69-1f81-4a71-9108-ceeb1de36741" alt="Project Banner">
-</a>
