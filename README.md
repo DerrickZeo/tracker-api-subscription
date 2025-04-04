@@ -1,4 +1,4 @@
-![Zeosyst Subscription Tracker](./zeosyst_banner.png)
+![Zeosyst Subscription Tracker](./zeosyst_banner.jpg)
 
 <div align="center">
    <div>
